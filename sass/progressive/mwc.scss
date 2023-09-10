@@ -1,0 +1,6 @@
+/* Progressive enhancement with MaterialWeb */
+
+md-dialog:not(:defined),
+md-ripple:not(:defined) {
+    display: none;
+}
