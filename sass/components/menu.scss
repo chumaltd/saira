@@ -1,0 +1,80 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+//Derived: https://github.com/jgthms/bulma/blob/0.9.4/sass/components/menu.sass
+
+// Primer primitives v8: --fgColor-default, v7: --color-fg-default
+//   https://github.com/primer/css/blob/main/src/utilities/colors.scss
+$menu-item-color: var(--fgColor-default, var(--color-fg-default, hsl(0, 0%, 29%))) !default;
+$menu-item-radius: $radius-small !default;
+$menu-item-hover-color: var(--fgColor-default, var(--color-fg-default, hsl(0, 0%, 21%))) !default;
+$menu-item-hover-background-color: false !default;
+$menu-item-active-color: var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #fff)) !default;
+$menu-item-active-background-color: false !default;
+
+$menu-list-border-left: 1px solid !default;
+$menu-list-line-height: 1.25 !default;
+$menu-list-link-padding: 0.5em 0.75em !default;
+$menu-nested-list-margin: 0.75em !default;
+$menu-nested-list-padding-left: 0.75em !default;
+
+$menu-label-color: var(--fgColor-muted, var(--color-fg-muted, hsl(0, 0%, 48%))) !default;
+$menu-label-font-size: 0.75em !default;
+$menu-label-letter-spacing: 0.1em !default;
+$menu-label-spacing: 1em !default;
+
+.menu {
+  font-size: $size-normal;
+  // Sizes
+  //&.is-small {
+  //  font-size: $size-small;
+  //}
+  //&.is-medium {
+  //  font-size: $size-medium;
+  //}
+  //&.is-large {
+  //  font-size: $size-large;
+  //}
+}
+
+.menu-list {
+  line-height: $menu-list-line-height;
+  a {
+    border-radius: $menu-item-radius;
+    color: $menu-item-color;
+    padding: $menu-list-link-padding;
+    // icon centering
+    display: flex;
+    align-items: center;
+    &:hover {
+      background-color: $menu-item-hover-background-color;
+      color: $menu-item-hover-color;
+    }
+    // Modifiers
+    &.is-active {
+      background-color: $menu-item-active-background-color;
+      color: $menu-item-active-color;
+    }
+  }
+  li {
+    ul {
+      @include ltr-property("border", $menu-list-border-left, false);
+      margin: $menu-nested-list-margin;
+      @include ltr-property("padding", $menu-nested-list-padding-left, false);
+    }
+ }
+}
+
+.menu-label {
+  color: $menu-label-color;
+  font-size: $menu-label-font-size;
+  letter-spacing: $menu-label-letter-spacing;
+  //text-transform: uppercase;
+  margin-top: $menu-label-spacing;
+  //&:not(:first-child) {
+  //  margin-top: $menu-label-spacing;
+  //}
+  &:not(:last-child) {
+    margin-bottom: $menu-label-spacing;
+  }
+}
