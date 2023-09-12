@@ -1,0 +1,77 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+// https://github.com/jgthms/bulma/blob/0.9.4/sass/elements/notification.sass
+
+$notification-background-color: var(--overlay-bgColor, var(--color-canvas-overlay)) !default;
+$notification-code-background-color: var(--default-bgColor, var(--color-canvas-default)) !default;
+$notification-radius: $radius !default;
+$notification-padding: 1.25rem 2.5rem 1.25rem 1.5rem !default;
+$notification-padding-ltr: 1.25rem 2.5rem 1.25rem 1.5rem !default;
+$notification-padding-rtl: 1.25rem 1.5rem 1.25rem 2.5rem !default;
+
+.notification {
+  &:not(:last-child) {
+    margin-bottom: $block-spacing;
+  }
+  color: var(--fgColor-default, var(--color-fg-default, hsl(0, 0%, 29%)));
+  background-color: $notification-background-color;
+  border-radius: $notification-radius;
+  position: relative;
+  @include ltr {
+    padding: $notification-padding-ltr;
+  }
+  @include rtl {
+    padding: $notification-padding-rtl;
+  }
+  a:not(.button):not(.dropdown-item) {
+    color: currentColor;
+    text-decoration: underline;
+  }
+  strong {
+    color: currentColor;
+  }
+  code,
+  pre {
+    background: $notification-code-background-color;
+  }
+  pre code {
+    background: transparent;
+  }
+  //& > .delete {
+  //  @include ltr-position(0.5rem)
+  //  position: absolute;
+  //  top: 0.5rem;
+  //}
+  .title,
+  .subtitle,
+  .content {
+    color: currentColor;
+  }
+
+  &.is-info {
+	  background-color: var(--bgColor-accent-muted, var(--color-accent-muted));
+	  strong, i {
+	          color: var(--fgColor-accent, var(--color-accent-fg));
+	  }
+  }
+  &.is-success {
+	  background-color: var(--bgColor-success-muted, var(--color-success-muted));
+	  strong, i {
+	          color: var(--fgColor-success, var(--color-success-fg));
+	  }
+  }
+  &.is-warning {
+	  background-color: var(--bgColor-attention-muted, var(--color-attention-muted));
+	  strong, i {
+	          color: var(--fgColor-attention, var(--color-attention-fg));
+	  }
+  }
+  &.is-danger {
+	  background-color: var(--bgColor-danger-muted, var(--color-danger-muted));
+	  strong, i {
+	          color: var(--fgColor-danger, var(--color-danger-fg));
+	  }
+  }
+
+}
