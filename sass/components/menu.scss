@@ -57,6 +57,7 @@ $menu-label-spacing: 1em !default;
     }
   }
   li {
+    position: relative;
     ul {
       @include ltr-property("border", $menu-list-border-left, false);
       margin: $menu-nested-list-margin;

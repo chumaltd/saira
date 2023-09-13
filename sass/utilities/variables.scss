@@ -1,5 +1,7 @@
 // https://github.com/jgthms/bulma/blob/0.9.4/sass/utilities/initial-variables.sass
 
+$tablet: 769px !default;
+
 $radius: 4px !default;
 $radius-small: 2px !default;
 
@@ -7,6 +9,8 @@ $block-spacing: 1.5rem !default;
 $rtl: false !default;
 
 // https://github.com/jgthms/bulma/blob/0.9.4/sass/utilities/derived-variables.sass
+
+$primary: var(--primary-color, hsl(171, 100%, 41%)) !default;
 
 $size-small: 0.75rem !default;
 $size-normal: 1rem !default;
