@@ -1,6 +1,38 @@
 /* Progressive enhancement with MaterialWeb */
 
-md-dialog:not(:defined),
 md-ripple:not(:defined) {
     display: none;
+}
+
+md-menu, md-dialog {
+	&>.loading {
+		display: none;
+	}
+}
+md-menu:not(:defined),
+md-dialog:not(:defined) {
+	transition: all .3s ease-out;
+	opacity: 0;
+	md-menu-item,
+	md-sub-menu-item,
+	&>div,
+	&>section {
+		display: none;
+	}
+	&>.loading {
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		color: lightgray;
+		background: rgba(0,0,0,.5);
+		text-align: center;
+		padding-top: 50vh;
+	}
+}
+md-menu:not(:defined)[open],
+md-dialog:not(:defined)[open] {
+	opacity: 1;
 }
