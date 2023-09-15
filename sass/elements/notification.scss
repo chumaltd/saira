@@ -11,9 +11,7 @@ $notification-padding-ltr: 1.25rem 2.5rem 1.25rem 1.5rem !default;
 $notification-padding-rtl: 1.25rem 1.5rem 1.25rem 2.5rem !default;
 
 .notification {
-  &:not(:last-child) {
-    margin-bottom: $block-spacing;
-  }
+  @include block();
   color: var(--fgColor-default, var(--color-fg-default, hsl(0, 0%, 29%)));
   background-color: $notification-background-color;
   border-radius: $notification-radius;
