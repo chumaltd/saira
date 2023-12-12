@@ -1,0 +1,22 @@
+{
+  "name": "saira",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/mod.js",
+  "scripts": {
+    "build:lit": "cd primer; pnpm install -P; cd ..; node litjs-build.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@csstools/postcss-sass": "^5.0.1",
+    "autoprefixer": "^10.4.16",
+    "fs-extra": "^11.2.0",
+    "postcss": "^8.4.32",
+    "postcss-custom-properties-fallback": "^1.0.2",
+    "postcss-import": "^15.1.0",
+    "postcss-scss": "^4.0.9"
+  }
+}
