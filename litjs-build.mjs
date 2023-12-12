@@ -10,7 +10,7 @@ import fsExtra from 'fs-extra'
 const {mkdirp, readFile, writeFile} = fsExtra
 
 const inDir = 'src'
-const outDir = 'dist'
+const outDir = 'lit'
 const bundleNames = {
   'index.scss': 'primer'
 }

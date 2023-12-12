@@ -2,7 +2,7 @@
   "name": "saira",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/mod.js",
+  "main": "lit/mod.js",
   "scripts": {
     "build:lit": "cd primer; pnpm install -P; cd ..; node litjs-build.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
