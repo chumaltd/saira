@@ -23,7 +23,7 @@ $hero-body-padding-large: 18rem 6rem !default;
     }
   }
   &.is-light {
-    background-color: var(--borderColor-muted, var(--color-border-subtle));
+    background-color: color-mix(in srgb, rgb(128, 128, 128) 30%, var(--bgColor-default, var(--color-canvas-default)));
   }
   // Sizes
   &.is-small {
