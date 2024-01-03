@@ -30,17 +30,31 @@ $desktop: 960px + (2 * $gap) !default;
 
 $radius: 4px !default;
 $radius-small: 2px !default;
+$radius-rounded: 9999px !default;
 
 $rtl: false !default;
 
 // https://github.com/jgthms/bulma/blob/0.9.4/sass/utilities/derived-variables.sass
 
-$primary: var(--primary-color, hsl(171, 100%, 41%)) !default;
+$primary: hsl(171, 100%, 41%) !default;
 
 $size-small: 0.75rem !default;
 $size-normal: 1rem !default;
 $size-medium: 1.25rem !default;
 $size-large: 1.5rem !default;
 
+// Link colors
+$link: hsl(229, 53%, 53%) !default;
+
 // Lists and maps
+$colors: (
+  "primary": var(--bgColor-primary, #{$primary}) var(--bgColor-default, var(--color-canvas-default)),
+  "link": var(--fgColor-link, #{$link}) var(--bgColor-default, var(--color-canvas-default)),
+  "info": var(--bgColor-accent-emphasis, var(--color-accent-emphasis)) var(--color-fg-on-emphasis),
+  "success": var(--bgColor-success-emphasis, var(--color-success-emphasis)) var(--color-fg-on-emphasis),
+  "warning": var(--bgColor-attention-emphasis, var(--color-attention-emphasis)) var(--color-fg-on-emphasis),
+  "danger": var(--bgColor-danger-emphasis, var(--color-danger-emphasis)) var(--color-fg-on-emphasis),
+  "black": #111 #fff
+);
+
 $sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6 $size-7 !default;

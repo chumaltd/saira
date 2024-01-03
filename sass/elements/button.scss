@@ -1,0 +1,207 @@
+@use "../utilities/variables" as v;
+@import "../utilities/mixins";
+
+// https://github.com/jgthms/bulma/blob/0.9.4/sass/elements/button.sass
+
+$button-color: hsl(0, 0%, 21%) !default;
+$button-background-color: hsl(0, 0%, 100%) !default;
+
+$button-border-color: hsl(0, 0%, 80%) !default;
+$button-border-width: 1px !default;
+
+$button-padding-vertical: calc(0.5em - #{$button-border-width}) !default;
+$button-padding-horizontal: 1em !default;
+
+$button-hover-color: hsl(0, 0%, 21%) !default;
+$button-hover-border-color: hsl(0, 0%, 71%) !default;
+
+$button-focus-color: hsl(0, 0%, 21%) !default;
+$button-focus-border-color: hsl(229, 53%, 53%) !default;
+$button-focus-box-shadow-size: 0 0 0 0.125em !default;
+$button-focus-box-shadow-color: color-mix(in srgb, #{v.$link} 25%, transparent) !default;
+
+$button-active-color: hsl(0, 0%, 21%) !default;
+$button-active-border-color: hsl(0, 0%, 21%) !default;
+
+$button-disabled-background-color: hsl(0, 0%, 100%) !default;
+$button-disabled-border-color: hsl(0, 0%, 80%) !default;
+$button-disabled-shadow: none !default;
+$button-disabled-opacity: 0.5 !default;
+
+$button-colors: v.$colors;
+
+// The button sizes use mixins so they can be used at different breakpoints
+@mixin button-small {
+  &:not(.is-rounded) {
+    border-radius: v.$radius-small;
+  }
+  font-size: v.$size-small;
+}
+@mixin button-normal {
+  font-size: v.$size-normal;
+}
+@mixin button-medium {
+  font-size: v.$size-medium;
+}
+@mixin button-large {
+  font-size: v.$size-large;
+}
+
+.button {
+  //@extend %control
+  user-select: none;
+  background-color: $button-background-color;
+  border-color: $button-border-color;
+  border-width: $button-border-width;
+  color: $button-color;
+  cursor: pointer;
+  justify-content: center;
+  padding-bottom: $button-padding-vertical;
+  padding-left: $button-padding-horizontal;
+  padding-right: $button-padding-horizontal;
+  padding-top: $button-padding-vertical;
+  text-align: center;
+  white-space: nowrap;
+  strong {
+    color: inherit;
+  }
+  .icon {
+    &,
+    &.is-small,
+    &.is-medium,
+    &.is-large {
+      height: 1.5em;
+      width: 1.5em;
+    }
+    &:first-child:not(:last-child) {
+      @include ltr-property("margin", calc(#{-0.5 * $button-padding-horizontal} - #{$button-border-width}), false);
+      @include ltr-property("margin", $button-padding-horizontal * 0.25);
+    }
+    &:last-child:not(:first-child) {
+      @include ltr-property("margin", $button-padding-horizontal * 0.25, false);
+      @include ltr-property("margin", calc(#{-0.5 * $button-padding-horizontal} - #{$button-border-width}));
+    }
+    &:first-child:last-child {
+      margin-left: calc(#{-0.5 * $button-padding-horizontal} - #{$button-border-width});
+      margin-right: calc(#{-0.5 * $button-padding-horizontal} - #{$button-border-width});
+    }
+  }
+  // States
+  &:hover {
+    border-color: $button-hover-border-color;
+    color: $button-hover-color;
+  }
+  &:focus,
+  &.is-focused {
+    border-color: $button-focus-border-color;
+    color: $button-focus-color;
+    &:not(:active) {
+      box-shadow: $button-focus-box-shadow-size $button-focus-box-shadow-color;
+    }
+  }
+  // Colors
+  @each $name, $pair in $button-colors {
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+    &.is-#{$name} {
+      background-color: $color;
+      border-color: transparent;
+      color: $color-invert;
+      &:hover {
+        background-color: color-mix(in srgb, #{$color} 90%, transparent);
+        border-color: transparent;
+        color: $color-invert;
+      }
+      &:focus, &.is-focused {
+        border-color: transparent;
+        color: $color-invert;
+        &:not(:active) {
+          box-shadow: $button-focus-box-shadow-size color-mix(in srgb, #{$color} 25%, transparent);
+	}
+      }
+      &[disabled], fieldset[disabled] & {
+        background-color: $color;
+        border-color: transparent;
+        box-shadow: none;
+      }
+      &.is-inverted {
+        background-color: $color-invert;
+        color: $color;
+        &:hover {
+          background-color: color-mix(in srgb, #{$color-invert} 90%, transparent);
+        }
+        &[disabled], fieldset[disabled] & {
+          background-color: $color-invert;
+          border-color: transparent;
+          box-shadow: none;
+          color: $color;
+	}
+      }
+      &.is-outlined {
+        background-color: transparent;
+        border-color: $color;
+        color: $color;
+        &:hover, &:focus, &.is-focused {
+          background-color: $color;
+          border-color: $color;
+          color: $color-invert;
+        }
+        &[disabled], fieldset[disabled] & {
+          background-color: transparent;
+          border-color: $color;
+          box-shadow: none;
+          color: $color;
+	}
+      }
+      &.is-transparent {
+        background-color: transparent;
+        border-color: transparent;
+        color: $color;
+        &:hover, &:focus, &.is-focused {
+          background-color: $color;
+          border-color: transparent;
+          color: $color-invert;
+        }
+        &[disabled], fieldset[disabled] & {
+          background-color: transparent;
+          border-color: $color;
+          box-shadow: none;
+          color: $color;
+	}
+      }
+    }
+  }
+  &.is-black {
+	  border: solid 1px #888;
+  }
+  // Sizes
+  &.is-small {
+    @include button-small;
+  }
+  &.is-normal {
+    @include button-normal;
+  }
+  &.is-medium {
+    @include button-medium;
+  }
+  &.is-large {
+    @include button-large;
+  }
+  // Modifiers
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: $button-disabled-background-color;
+    border-color: $button-disabled-border-color;
+    box-shadow: $button-disabled-shadow;
+    opacity: $button-disabled-opacity;
+  }
+  &.is-fullwidth {
+    display: flex;
+    width: 100%;
+  }
+  &.is-rounded {
+    border-radius: v.$radius-rounded;
+    padding-left: calc(#{$button-padding-horizontal} + 0.25em);
+    padding-right: calc(#{$button-padding-horizontal} + 0.25em);
+  }
+}

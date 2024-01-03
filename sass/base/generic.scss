@@ -1,0 +1,17 @@
+@use "../utilities/variables" as v;
+
+body {
+	--fgColor-emphasis: #fff;
+	--fgColor-link: var(--link-color, #{v.$link});
+	--bgColor-primary: var(--primary-color, #{v.$primary});
+}
+[data-color-mode=dark] body,
+body[data-color-mode=dark] {
+	--fgColor-emphasis: #111;
+	--fgColor-link: var(--link-color-dk, color-mix(in srgb, var(--link-color, #{v.$link}) 30%, #fff));
+	--bgColor-primary: var(--primary-color-dk, color-mix(in srgb, var(--primary-color, #{v.$primary}) 30%, #fff));
+}
+
+body a {
+	color: var(--fgColor-link, #{v.$link});
+}
