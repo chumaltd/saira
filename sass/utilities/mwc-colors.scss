@@ -4,6 +4,7 @@
 body {
 	--md-sys-color-on-surface: var(--fgColor-default, var(--color-fg-default));
 	--md-sys-color-on-surface-variant: var(--fgColor-muted, var(--color-fg-muted));
+	--md-sys-color-primary: var(--bgColor-primary);
 	--md-sys-color-surface: var(--bgColor-inset, var(--color-canvas-inset));
 	--md-sys-color-surface-container: var(--overlay-bgColor, var(--color-canvas-overlay));
 	--md-sys-color-surface-container-low: var(--overlay-bgColor, var(--color-canvas-overlay));
