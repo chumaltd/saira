@@ -51,8 +51,10 @@ $button-colors: v.$colors;
   //@extend %control
   user-select: none;
   background-color: $button-background-color;
+  border-style: solid;
   border-color: $button-border-color;
   border-width: $button-border-width;
+  border-radius: v.$radius;
   color: $button-color;
   cursor: pointer;
   justify-content: center;
