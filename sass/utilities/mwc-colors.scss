@@ -1,7 +1,7 @@
 /*
  * Set MaterialWeb default color scheme along with Primer Primitive
  */
-body {
+[data-color-mode] {
 	--md-sys-color-on-surface: var(--fgColor-default, var(--color-fg-default));
 	--md-sys-color-on-surface-variant: var(--fgColor-muted, var(--color-fg-muted));
 	--md-sys-color-primary: var(--bgColor-primary);
