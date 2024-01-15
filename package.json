@@ -1,10 +1,10 @@
 {
   "name": "saira",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "",
   "main": "lit/mod.js",
   "scripts": {
-    "build:lit": "cd primer; pnpm install -P; cd ..; node litjs-build.mjs",
+    "build:lit": "cd primer; pnpm install -P; cd ..; node litjs-build.mjs; node litjs-build-saira.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -18,5 +18,8 @@
     "postcss-custom-properties-fallback": "^1.0.2",
     "postcss-import": "^15.1.0",
     "postcss-scss": "^4.0.9"
+  },
+  "dependencies": {
+    "sass": "^1.69.7"
   }
 }

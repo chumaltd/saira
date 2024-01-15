@@ -1,19 +1,11 @@
-/*
- * Derived from:
- * https://github.com/primer/css/blob/v21.1.1/script/build-css.js
- */
-
-import compiler from './primer/script/primer-css-compiler.js'
+import * as sass from 'sass'
 import {basename, join} from 'path'
 
 import fsExtra from 'fs-extra'
 const {mkdirp, readFile, writeFile} = fsExtra
 
-const inDir = 'src/primer'
+const inDir = 'sass'
 const outDir = 'lit'
-const bundleNames = {
-  'index.scss': 'primer'
-}
 
 const wrapTemplate = (cssStr) => {
 	return [
@@ -25,21 +17,17 @@ const wrapTemplate = (cssStr) => {
 }
 
 const files = [
-	`${inDir}/container.scss`,
-	`${inDir}/margin.scss`,
-	`${inDir}/padding.scss`,
-	`${inDir}/visibility-display.scss`,
-	`${inDir}/box.scss`,
+	`${inDir}/components/menu.scss`,
+	`${inDir}/layout/section.scss`,
 ];
 await mkdirp(outDir)
 const inPattern = new RegExp(`^${inDir}/`)
 const tasks = files.map(async from => {
-  const path = from.replace(inPattern, '')
-  const name = bundleNames[path] || basename(path, '.scss').replace(/\//g, '-')
+  const name = basename(from, '.scss').replace(/\//g, '-')
 
   const to = join(outDir, `${name}.js`)
 
-  const result = await compiler(await readFile(from, 'utf8'), {from, to})
+  const result = await sass.compileAsync(from, {style: 'compressed'})
 
   await Promise.all([
     writeFile(to, wrapTemplate(result.css), 'utf8'),
