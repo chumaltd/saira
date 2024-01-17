@@ -22,6 +22,7 @@ const files = [
 	`${inDir}/elements/button.scss`,
 	`${inDir}/elements/icon.scss`,
 	`${inDir}/elements/notification.scss`,
+	`${inDir}/elements/table.scss`,
 	`${inDir}/elements/title.scss`,
 	`${inDir}/helpers/overflow.scss`,
 	`${inDir}/layout/footer.scss`,
