@@ -12,7 +12,8 @@ For example, you can store color-mode preference in `localStorage` across sessio
 Loading preference looks like following:
 
 ```html
-<script type="module">
+<script>
+(()=>{
   const DEFAULT_MODE = 'light';
   const t = localStorage.getItem('theme');
   let mode;
@@ -30,6 +31,7 @@ Loading preference looks like following:
       mode = DEFAULT_MODE;
   }
   document.querySelector('html').dataset.colorMode = mode;
+})()
 </script>
 ```
 
