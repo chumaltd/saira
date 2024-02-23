@@ -1,6 +1,6 @@
 {
   "name": "saira",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "",
   "main": "lit/mod.js",
   "scripts": {
@@ -11,15 +11,15 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@csstools/postcss-sass": "^5.0.1",
-    "autoprefixer": "^10.4.16",
+    "@csstools/postcss-sass": "^5.1.1",
+    "autoprefixer": "^10.4.17",
     "fs-extra": "^11.2.0",
-    "postcss": "^8.4.32",
+    "postcss": "^8.4.35",
     "postcss-custom-properties-fallback": "^1.0.2",
-    "postcss-import": "^15.1.0",
+    "postcss-import": "^16.0.1",
     "postcss-scss": "^4.0.9"
   },
   "dependencies": {
-    "sass": "^1.69.7"
+    "sass": "^1.71.1"
   }
 }
