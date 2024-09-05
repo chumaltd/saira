@@ -1,24 +1,30 @@
 @use "../utilities/variables" as v;
 
-[data-color-mode] {
+[data-color-mode], [data-color-mode=light] {
 	--fgColor-emphasis: #111;
-	--fgColor-link: var(--link-color, #{v.$link});
 	--bgColor-primary: var(--primary-color, #{v.$primary});
 }
 
 [data-color-mode=dark] {
 	--fgColor-emphasis: #fff;
-	--fgColor-link: var(--link-color-dk, color-mix(in srgb, var(--link-color, #{v.$link}) 30%, #fff));
 	--bgColor-primary: var(--primary-color-dk, color-mix(in srgb, var(--primary-color, #{v.$primary}) 30%, #fff));
 }
 @media (prefers-color-scheme: dark) {
   [data-color-mode=auto] {
 	--fgColor-emphasis: #fff;
-	--fgColor-link: var(--link-color-dk, color-mix(in srgb, var(--link-color, #{v.$link}) 30%, #fff));
 	--bgColor-primary: var(--primary-color-dk, color-mix(in srgb, var(--primary-color, #{v.$primary}) 30%, #fff));
+  }
+
+  [data-color-mode=auto] a {
+	color: var(--link-color-dk, color-mix(in srgb, var(--link-color, #{v.$link}) 30%, #fff));
   }
 }
 
-body a {
-	color: var(--fgColor-link, #{v.$link});
+
+[data-color-mode=light] a {
+	color: var(--link-color, var(--fgColor-link, #{v.$link}));
+}
+
+[data-color-mode=dark] a {
+	color: var(--link-color-dk, color-mix(in srgb, var(--link-color, #{v.$link}) 30%, #fff));
 }

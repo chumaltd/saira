@@ -4,7 +4,7 @@
 // https://github.com/jgthms/bulma/blob/0.9.4/sass/elements/notification.sass
 
 $notification-background-color: var(--overlay-bgColor, var(--color-canvas-overlay)) !default;
-$notification-code-background-color: var(--default-bgColor, var(--color-canvas-default)) !default;
+$notification-code-background-color: var(--bgColor-default, var(--color-canvas-default)) !default;
 $notification-radius: $radius !default;
 $notification-padding: 1.25rem 2.5rem 1.25rem 1.5rem !default;
 $notification-padding-ltr: 1.25rem 2.5rem 1.25rem 1.5rem !default;

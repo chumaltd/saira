@@ -1,7 +1,9 @@
+@use "./variables" as v;
+
 /*
  * Set MaterialWeb default color scheme along with Primer Primitive
  */
-[data-color-mode] {
+[data-color-mode], [data-color-mode=light] {
 	--md-sys-color-on-surface: var(--fgColor-default, var(--color-fg-default));
 	--md-sys-color-on-surface-variant: var(--fgColor-muted, var(--color-fg-muted));
 	--md-sys-color-primary: var(--bgColor-primary);
@@ -10,4 +12,19 @@
 	--md-sys-color-surface-container-low: var(--overlay-bgColor, var(--color-canvas-overlay));
 	--md-sys-color-surface-container-high: var(--overlay-bgColor, var(--color-canvas-overlay));
 	--md-sys-color-surface-container-highest: var(--bgColor-inset, var(--color-canvas-inset));
+
+        --md-fab-label-text-color: var(--link-color, var(--fgColor-link, #{v.$link}));
+        --md-text-button-label-text-color: var(--link-color, var(--fgColor-link, #{v.$link}));
+}
+
+[data-color-mode=dark] {
+        --md-fab-label-text-color: var(--link-color-dk, color-mix(in srgb, var(--link-color, #{v.$link}) 30%, #fff));
+        --md-text-button-label-text-color: var(--link-color-dk, color-mix(in srgb, var(--link-color, #{v.$link}) 30%, #fff));
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-color-mode=auto] {
+        --md-fab-label-text-color: var(--link-color-dk, color-mix(in srgb, var(--link-color, #{v.$link}) 30%, #fff));
+        --md-text-button-label-text-color: var(--link-color-dk, color-mix(in srgb, var(--link-color, #{v.$link}) 30%, #fff));
+  }
 }

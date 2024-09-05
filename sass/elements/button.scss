@@ -3,8 +3,8 @@
 
 // https://github.com/jgthms/bulma/blob/0.9.4/sass/elements/button.sass
 
-$button-color: hsl(0, 0%, 21%) !default;
-$button-background-color: hsl(0, 0%, 100%) !default;
+$button-color: var(--fgColor-default, hsl(0, 0%, 21%)) !default;
+$button-background-color: transparent !default;
 
 $button-border-color: hsl(0, 0%, 80%) !default;
 $button-border-width: 1px !default;
@@ -47,7 +47,7 @@ $button-colors: v.$colors;
   font-size: v.$size-large;
 }
 
-.button {
+.button, a.button {
   //@extend %control
   user-select: none;
   background-color: $button-background-color;

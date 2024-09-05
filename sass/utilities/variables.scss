@@ -40,7 +40,7 @@ $primary: hsl(171, 100%, 41%) !default;
 $primary-invert: var(--fgColor-on-emphasis, var(--color-fg-on-emphasis)) !default;
 
 // General colors
-$border: var(--color-border-default) !default;
+$border: var(--borderColor-default,  var(--color-border-default)) !default;
 
 $size-small: 0.75rem !default;
 $size-normal: 1rem !default;
