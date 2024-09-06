@@ -29,8 +29,8 @@ $table-striped-row-even-background-color: rgba(128, 128, 128, .05) !default;
 $table-striped-row-even-hover-background-color: rgba(128, 128, 128, .1) !default;
 
 .table {
-  @include block();
   background-color: $table-background-color;
+  @include block();
   td, th {
     border: $table-cell-border;
     border-width: $table-cell-border-width;
@@ -149,8 +149,8 @@ $table-striped-row-even-hover-background-color: rgba(128, 128, 128, .1) !default
 }
 
 .table-container {
-  @include block();
   overflow: auto;
   overflow-y: hidden;
   max-width: 100%;
+  @include block();
 }

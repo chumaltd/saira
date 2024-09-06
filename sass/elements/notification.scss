@@ -11,23 +11,23 @@ $notification-padding-ltr: 1.25rem 2.5rem 1.25rem 1.5rem !default;
 $notification-padding-rtl: 1.25rem 1.5rem 1.25rem 2.5rem !default;
 
 .notification {
-  @include block();
   color: var(--fgColor-default, var(--color-fg-default, hsl(0, 0%, 29%)));
   background-color: $notification-background-color;
   border-radius: $notification-radius;
   position: relative;
   @include ltr {
-    padding: $notification-padding-ltr;
+      padding: $notification-padding-ltr;
   }
   @include rtl {
-    padding: $notification-padding-rtl;
+      padding: $notification-padding-rtl;
   }
+  @include block();
   a:not(.button):not(.dropdown-item) {
-    color: currentColor;
-    text-decoration: underline;
+      color: currentColor;
+      text-decoration: underline;
   }
   strong {
-    color: currentColor;
+      color: currentColor;
   }
   code,
   pre {

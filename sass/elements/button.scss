@@ -32,19 +32,19 @@ $button-colors: v.$colors;
 
 // The button sizes use mixins so they can be used at different breakpoints
 @mixin button-small {
-  &:not(.is-rounded) {
-    border-radius: v.$radius-small;
-  }
-  font-size: v.$size-small;
+    font-size: v.$size-small;
+    &:not(.is-rounded) {
+        border-radius: v.$radius-small;
+    }
 }
 @mixin button-normal {
-  font-size: v.$size-normal;
+    font-size: v.$size-normal;
 }
 @mixin button-medium {
-  font-size: v.$size-medium;
+    font-size: v.$size-medium;
 }
 @mixin button-large {
-  font-size: v.$size-large;
+    font-size: v.$size-large;
 }
 
 .button, a.button {

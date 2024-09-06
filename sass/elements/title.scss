@@ -18,21 +18,21 @@ $subtitle-negative-margin: -1.25rem !default;
 
 .title,
 .subtitle {
-  @include block();
-  word-break: break-word;
-  em,
-  span {
-    font-weight: inherit;
-  }
-  sub {
-    font-size: $title-sub-size;
-  }
-  sup {
-    font-size: $title-sup-size;
-  }
-  //.tag {
-  //  vertical-align: middle;
-  //}
+    word-break: break-word;
+    @include block();
+    em,
+    span {
+        font-weight: inherit;
+    }
+    sub {
+        font-size: $title-sub-size;
+    }
+    sup {
+        font-size: $title-sup-size;
+    }
+    //.tag {
+    //  vertical-align: middle;
+    //}
 }
 
 .title {
