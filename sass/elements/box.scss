@@ -4,8 +4,8 @@
  * https://github.com/primer/view_components/blob/v0.2.0/app/components/primer/beta/border_box.pcss
  */
 .box {
-  background-color: var(--bgColor-default, var(--color-canvas-default));
-  border-color: var(--borderColor-default, var(--color-border-default));
+  background-color: var(--bgColor-default);
+  border-color: var(--borderColor-default);
   border-style: solid;
   border-width: var(--borderWidth-thin, 1px);
   border-radius: var(--borderRadius-medium, 6px);

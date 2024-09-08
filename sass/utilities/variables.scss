@@ -37,10 +37,10 @@ $rtl: false !default;
 // https://github.com/jgthms/bulma/blob/0.9.4/sass/utilities/derived-variables.sass
 
 $primary: hsl(171, 100%, 41%) !default;
-$primary-invert: var(--fgColor-on-emphasis, var(--color-fg-on-emphasis)) !default;
+$primary-invert: var(--fgColor-on-emphasis) !default;
 
 // General colors
-$border: var(--borderColor-default,  var(--color-border-default)) !default;
+$border: var(--borderColor-default) !default;
 
 $size-small: 0.75rem !default;
 $size-normal: 1rem !default;
@@ -52,12 +52,12 @@ $link: hsl(229, 53%, 53%) !default;
 
 // Lists and maps
 $colors: (
-  "primary": var(--bgColor-primary, #{$primary}) var(--bgColor-default, var(--color-canvas-default)),
-  "link": var(--fgColor-link, #{$link}) var(--bgColor-default, var(--color-canvas-default)),
-  "info": var(--bgColor-accent-emphasis, var(--color-accent-emphasis)) var(--color-fg-on-emphasis),
-  "success": var(--bgColor-success-emphasis, var(--color-success-emphasis)) var(--color-fg-on-emphasis),
-  "warning": var(--bgColor-attention-emphasis, var(--color-attention-emphasis)) var(--color-fg-on-emphasis),
-  "danger": var(--bgColor-danger-emphasis, var(--color-danger-emphasis)) var(--color-fg-on-emphasis),
+  "primary": var(--bgColor-primary, #{$primary}) var(--bgColor-default),
+  "link": var(--fgColor-link, #{$link}) var(--bgColor-default),
+  "info": var(--bgColor-accent-emphasis) var(--fgColor-on-emphasis),
+  "success": var(--bgColor-success-emphasis) var(--fgColor-on-emphasis),
+  "warning": var(--bgColor-attention-emphasis) var(--fgColor-on-emphasis),
+  "danger": var(--bgColor-danger-emphasis) var(--fgColor-on-emphasis),
   "black": #111 #fff
 );
 

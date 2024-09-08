@@ -17,13 +17,13 @@ $hero-body-padding-large: 18rem 6rem !default;
   justify-content: space-between;
   &.is-primary {
     background-color: var(--bgColor-primary, $primary);
-    color: var(--fgColor-onEmphasis, var(--color-fg-on-emphasis));
+    color: var(--fgColor-onEmphasis);
     .title, .subtitle {
-	    color: var(--fgColor-onEmphasis, var(--color-fg-on-emphasis));
+	    color: var(--fgColor-onEmphasis);
     }
   }
   &.is-light {
-    background-color: color-mix(in srgb, rgb(128, 128, 128) 30%, var(--bgColor-default, var(--color-canvas-default)));
+    background-color: color-mix(in srgb, rgb(128, 128, 128) 30%, var(--bgColor-default));
   }
   // Sizes
   &.is-small {

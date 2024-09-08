@@ -3,15 +3,15 @@
 
 // https://github.com/jgthms/bulma/blob/0.9.4/sass/elements/notification.sass
 
-$notification-background-color: var(--overlay-bgColor, var(--color-canvas-overlay)) !default;
-$notification-code-background-color: var(--bgColor-default, var(--color-canvas-default)) !default;
+$notification-background-color: var(--overlay-bgColor) !default;
+$notification-code-background-color: var(--bgColor-default) !default;
 $notification-radius: $radius !default;
 $notification-padding: 1.25rem 2.5rem 1.25rem 1.5rem !default;
 $notification-padding-ltr: 1.25rem 2.5rem 1.25rem 1.5rem !default;
 $notification-padding-rtl: 1.25rem 1.5rem 1.25rem 2.5rem !default;
 
 .notification {
-  color: var(--fgColor-default, var(--color-fg-default, hsl(0, 0%, 29%)));
+  color: var(--fgColor-default, hsl(0, 0%, 29%));
   background-color: $notification-background-color;
   border-radius: $notification-radius;
   position: relative;
@@ -48,27 +48,27 @@ $notification-padding-rtl: 1.25rem 1.5rem 1.25rem 2.5rem !default;
   }
 
   &.is-info {
-	  background-color: var(--bgColor-accent-muted, var(--color-accent-muted));
+	  background-color: var(--bgColor-accent-muted);
 	  strong, i {
-	          color: var(--fgColor-accent, var(--color-accent-fg));
+	          color: var(--fgColor-accent);
 	  }
   }
   &.is-success {
-	  background-color: var(--bgColor-success-muted, var(--color-success-muted));
+	  background-color: var(--bgColor-success-muted);
 	  strong, i {
-	          color: var(--fgColor-success, var(--color-success-fg));
+	          color: var(--fgColor-success);
 	  }
   }
   &.is-warning {
-	  background-color: var(--bgColor-attention-muted, var(--color-attention-muted));
+	  background-color: var(--bgColor-attention-muted);
 	  strong, i {
-	          color: var(--fgColor-attention, var(--color-attention-fg));
+	          color: var(--fgColor-attention);
 	  }
   }
   &.is-danger {
-	  background-color: var(--bgColor-danger-muted, var(--color-danger-muted));
+	  background-color: var(--bgColor-danger-muted);
 	  strong, i {
-	          color: var(--fgColor-danger, var(--color-danger-fg));
+	          color: var(--fgColor-danger);
 	  }
   }
 

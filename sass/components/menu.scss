@@ -3,13 +3,12 @@
 
 //Derived: https://github.com/jgthms/bulma/blob/0.9.4/sass/components/menu.sass
 
-// Primer primitives v8: --fgColor-default, v7: --color-fg-default
 //   https://github.com/primer/css/blob/main/src/utilities/colors.scss
-$menu-item-color: var(--fgColor-default, var(--color-fg-default, hsl(0, 0%, 29%))) !default;
+$menu-item-color: var(--fgColor-default, hsl(0, 0%, 29%)) !default;
 $menu-item-radius: $radius-small !default;
-$menu-item-hover-color: var(--fgColor-default, var(--color-fg-default, hsl(0, 0%, 21%))) !default;
+$menu-item-hover-color: var(--fgColor-default, hsl(0, 0%, 21%)) !default;
 $menu-item-hover-background-color: false !default;
-$menu-item-active-color: var(--fgColor-onEmphasis, var(--color-fg-on-emphasis, #fff)) !default;
+$menu-item-active-color: var(--fgColor-onEmphasis, #fff) !default;
 $menu-item-active-background-color: false !default;
 
 $menu-list-border-left: 1px solid !default;
@@ -18,7 +17,7 @@ $menu-list-link-padding: 0.5em 0.75em !default;
 $menu-nested-list-margin: 0.75em !default;
 $menu-nested-list-padding-left: 0.75em !default;
 
-$menu-label-color: var(--fgColor-muted, var(--color-fg-muted, hsl(0, 0%, 48%))) !default;
+$menu-label-color: var(--fgColor-muted, hsl(0, 0%, 48%)) !default;
 $menu-label-font-size: 0.75em !default;
 $menu-label-letter-spacing: 0.1em !default;
 $menu-label-spacing: 1em !default;

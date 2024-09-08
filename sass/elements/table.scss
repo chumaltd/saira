@@ -8,13 +8,13 @@ $table-background-color: transparent !default;
 $table-cell-border: 1px solid $border !default;
 $table-cell-border-width: 0 0 1px !default;
 $table-cell-padding: 0.5em 0.75em !default;
-$table-cell-heading-color: var(--fgColor-default, var(--color-fg-default)) !default;
+$table-cell-heading-color: var(--fgColor-default) !default;
 $table-cell-text-align: left !default;
 
 $table-head-cell-border-width: 0 0 2px !default;
-$table-head-cell-color: var(--fgColor-default, var(--color-fg-default)) !default;
+$table-head-cell-color: var(--fgColor-default) !default;
 $table-foot-cell-border-width: 2px 0 0 !default;
-$table-foot-cell-color: var(--fgColor-default, var(--color-fg-default)) !default;
+$table-foot-cell-color: var(--fgColor-default) !default;
 
 $table-head-background-color: transparent !default;
 $table-body-background-color: transparent !default;
