@@ -1,0 +1,53 @@
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as mx;
+
+// Derived: https://github.com/jgthms/bulma/blob/1.0.2/sass/elements/image.scss
+
+$dimensions: 16 24 32 48 64 96 128 !default;
+
+.image {
+  display: block;
+  position: relative;
+
+  img.is-rounded {
+      border-radius: v.$radius-rounded;
+  }
+  img,
+  .has-ratio {
+      @include mx.overlay;
+      display: block;
+      height: 100%;
+      width: 100%;
+  }
+
+  &.is-fullwidth {
+      width: 100%;
+      img {
+          display: block;
+          height: auto;
+          width: 100%;
+      }
+  }
+
+  // Ratio
+  &.is-square {
+      aspect-ratio: 1;
+  }
+
+  @each $pair in v.$aspect-ratios {
+      $w: nth($pair, 1);
+      $h: nth($pair, 2);
+
+      &.is-#{$w}by#{$h} {
+          aspect-ratio: #{$w} / #{$h};
+      }
+  }
+
+  // Sizes
+  @each $dimension in $dimensions {
+    &.is-#{$dimension}x#{$dimension} {
+      height: $dimension * 1px;
+      width: $dimension * 1px;
+    }
+  }
+}
