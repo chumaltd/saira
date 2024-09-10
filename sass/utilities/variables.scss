@@ -36,7 +36,7 @@ $rtl: false !default;
 
 // https://github.com/jgthms/bulma/blob/0.9.4/sass/utilities/derived-variables.sass
 
-$primary: hsl(171, 100%, 41%) !default;
+$primary: var(--bgColor-primary, hsl(171, 100%, 41%)) !default;
 $primary-invert: var(--fgColor-onInverse) !default;
 
 // General colors
@@ -48,17 +48,17 @@ $size-medium: 1.25rem !default;
 $size-large: 1.5rem !default;
 
 // Link colors
-$link: hsl(229, 53%, 53%) !default;
+$link: var(--fgColor-saira-link, var(--fgColor-link, hsl(229, 53%, 53%))) !default;
 
 // Lists and maps
 $colors: (
-  "primary": var(--bgColor-primary, #{$primary}) var(--fgColor-onInverse),
-  "link": var(--fgColor-link, #{$link}) var(--fgColor-onInverse),
-  "info": var(--bgColor-accent-emphasis) var(--fgColor-onInverse),
-  "success": var(--bgColor-success-emphasis) var(--fgColor-onInverse),
-  "warning": var(--bgColor-attention-emphasis) var(--fgColor-onInverse),
-  "danger": var(--bgColor-danger-emphasis) var(--fgColor-onInverse),
-  "black": #111 #fff
+    "primary": #{$primary} #{$primary-invert},
+    "link": var(--fgColor-link, #{$link}) var(--fgColor-onInverse),
+    "info": var(--bgColor-accent-emphasis) var(--fgColor-onInverse),
+    "success": var(--bgColor-success-emphasis) var(--fgColor-onInverse),
+    "warning": var(--bgColor-attention-emphasis) var(--fgColor-onInverse),
+    "danger": var(--bgColor-danger-emphasis) var(--fgColor-onInverse),
+    "black": #111 #fff
 );
 
 $sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6 $size-7 !default;

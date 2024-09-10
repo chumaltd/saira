@@ -1,0 +1,218 @@
+@use "sass:map";
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+//Derived: https://github.com/jgthms/bulma/blob/0.9.4/sass/components/navbar.sass
+
+$navbar-background-color: $primary !default;
+$navbar-box-shadow-size: 0 2px 0 0 !default;
+$navbar-box-shadow-color: color-mix(in srbg, var(--bgColor-default), var(--bgColor-muted) 20%) !default;
+$navbar-height: 3.25rem !default;
+$navbar-padding-vertical: 1rem !default;
+$navbar-padding-horizontal: 2rem !default;
+$navbar-z: 30 !default;
+
+$navbar-item-color: var(--fgColor-default) !default;
+$navbar-item-hover-color: $link !default;
+$navbar-item-hover-background-color: var(--bgColor-muted) !default;
+$navbar-item-active-color: $primary-invert !default;
+$navbar-item-active-background-color: transparent !default;
+$navbar-item-img-max-height: 1.75rem !default;
+
+$navbar-tab-hover-background-color: transparent !default;
+$navbar-tab-hover-border-bottom-color: $link !default;
+$navbar-tab-active-color: $link !default;
+$navbar-tab-active-background-color: transparent !default;
+$navbar-tab-active-border-bottom-color: $link !default;
+$navbar-tab-active-border-bottom-style: solid !default;
+$navbar-tab-active-border-bottom-width: 3px !default;
+
+$navbar-bottom-box-shadow-size: 0 -2px 0 0 !default;
+
+$navbar-breakpoint: $desktop !default;
+
+$navbar-colors: ("primary": map.get($colors, "primary")) !default;
+
+.navbar {
+    background-color: $navbar-background-color;
+    min-height: $navbar-height;
+    position: relative;
+    z-index: $navbar-z;
+    @each $name, $pair in $navbar-colors {
+        $color: nth($pair, 1);
+        $color-invert: nth($pair, 2);
+        &.is-#{$name} {
+            background-color: $color;
+            color: $color-invert;
+            .navbar-brand {
+                & > a.navbar-item {
+                    &:focus,
+                    &:hover,
+                    &.is-active {
+                        background-color: color-mix(in srgb, $color, var(--bgColor-muted) 8%);
+                    }
+                }
+            }
+        }
+        @media screen and (min-width: $navbar-breakpoint) {
+            .navbar-start,
+            .navbar-end {
+                & > .navbar-item {
+                    color: $color-invert;
+                }
+                & > a.navbar-item {
+                    &:focus,
+                    &:hover,
+                    &.is-active {
+                        background-color: color-mix(in srgb, $color, var(--bgColor-muted) 8%);
+                    }
+                }
+            }
+      }
+  }
+  & > .container {
+      align-items: stretch;
+      display: flex;
+      min-height: $navbar-height;
+      width: 100%;
+  }
+  &.has-shadow {
+      box-shadow: $navbar-box-shadow-size $navbar-box-shadow-color;
+  }
+}
+
+.navbar-brand {
+    align-items: stretch;
+    display: flex;
+    flex-shrink: 0;
+    min-height: $navbar-height;
+    a.navbar-item {
+        &:focus,
+        &:hover {
+            background-color: transparent;
+        }
+    }
+}
+
+.navbar-item {
+    color: $navbar-item-color;
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    line-height: 1.5;
+    padding: 0.5rem 0.75rem;
+    position: relative;
+    .icon {
+        &:only-child {
+            margin-left: -0.25rem;
+            margin-right: -0.25rem;
+        }
+    }
+    img {
+        max-height: $navbar-item-img-max-height;
+    }
+    &.is-expanded {
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+    &.is-tab {
+        border-bottom: 1px solid transparent;
+        min-height: $navbar-height;
+        padding-bottom: calc(0.5rem - 1px);
+        &:focus,
+        &:hover {
+            background-color: $navbar-tab-hover-background-color;
+            border-bottom-color: $navbar-tab-hover-border-bottom-color;
+        }
+        &.is-active {
+            background-color: $navbar-tab-active-background-color;
+            border-bottom-color: $navbar-tab-active-border-bottom-color;
+            border-bottom-style: $navbar-tab-active-border-bottom-style;
+            border-bottom-width: $navbar-tab-active-border-bottom-width;
+            color: $navbar-tab-active-color;
+            padding-bottom: calc(0.5rem - #{$navbar-tab-active-border-bottom-width});
+        }
+    }
+}
+
+a.navbar-item {
+    cursor: pointer;
+    &:focus,
+    &:focus-within,
+    &:hover,
+    &.is-active {
+        background-color: $navbar-item-hover-background-color;
+        color: $navbar-item-hover-color;
+    }
+}
+
+.navbar-content {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+@media screen and (max-width: $navbar-breakpoint - 1px) {
+    .navbar > .container {
+        display: block;
+    }
+    .navbar-brand,
+    .navbar-tabs {
+        .navbar-item {
+            align-items: center;
+            display: flex;
+        }
+    }
+}
+
+@media screen and (min-width: $navbar-breakpoint) {
+  .navbar,
+  .navbar-start,
+  .navbar-end {
+      align-items: stretch;
+      display: flex;
+  }
+  .navbar {
+      min-height: $navbar-height;
+      &.is-spaced {
+          padding: $navbar-padding-vertical $navbar-padding-horizontal;
+          .navbar-start,
+          .navbar-end {
+              align-items: center;
+          }
+          a.navbar-item {
+              border-radius: $radius;
+          }
+      }
+      &.is-transparent {
+          a.navbar-item {
+              &:focus,
+              &:hover,
+              &.is-active {
+                  background-color: transparent !important;
+              }
+          }
+      }
+  }
+  .navbar-item {
+      align-items: center;
+      display: flex;
+  }
+  .navbar-start {
+      justify-content: flex-start;
+      @include ltr-property("margin", auto);
+  }
+  .navbar-end {
+      justify-content: flex-end;
+      @include ltr-property("margin", auto, false);
+  }
+  /* NOTE: negative margin disabled
+  .navbar > .container,
+  .container > .navbar {
+    .navbar-brand {
+        @include ltr-property("margin", -.75rem, false);
+    }
+    .navbar-menu {
+        @include ltr-property("margin", -.75rem);
+    }
+  }*/
+}
