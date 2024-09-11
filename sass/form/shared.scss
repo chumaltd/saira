@@ -1,0 +1,66 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+@use "../utilities/controls" as *;
+
+// Origin: https://github.com/jgthms/bulma/blob/0.9.4/sass/form/shared.sass
+
+$form-colors: $colors !default;
+
+$input-color: var(--fgColor-emphasis) !default;
+$input-background-color: transparent !default;
+$input-border-color: var(--borderColor-default) !default;
+$input-height: $control-height !default;
+$input-shadow: inset 0 0.0625em 0.125em rgba(var(--bgColor-inverse), 0.05) !default;
+$input-placeholder-color: var(--fgColor-muted) !default;
+
+$input-hover-color: var(--fgColor-emphasis) !default;
+$input-hover-border-color: var(--borderColor-emphasis) !default;
+
+$input-focus-color: var(--fgColor-emphasis) !default;
+$input-focus-border-color: var(--fgColor-link) !default;
+$input-focus-box-shadow-size: 0 0 0 0.125em !default;
+$input-focus-box-shadow-color: rgba(var(--fgColor-link), 0.25) !default;
+
+$input-disabled-color: var(--fgColor-disabled) !default;
+$input-disabled-background-color: var(--bgColor-disabled) !default;
+$input-disabled-border-color: var(--borderColor-disabled) !default;
+$input-disabled-placeholder-color: var(--fgColor-muted) !default;
+
+$input-arrow: var(--fgColor-link) !default;
+
+$input-icon-color: $border !default;
+$input-icon-active-color: var(--fgColor-default) !default;
+
+$input-radius: $radius !default;
+
+@mixin input {
+  background-color: $input-background-color;
+  border-color: $input-border-color;
+  border-radius: $input-radius;
+  color: $input-color;
+  @include control;
+  &::placeholder {
+    color: $input-placeholder-color;
+  }
+  &:hover,
+  &.is-hovered {
+    border-color: $input-hover-border-color;
+  }
+  &:focus,
+  &.is-focused,
+  &:active,
+  &.is-active {
+    border-color: $input-focus-border-color;
+    box-shadow: $input-focus-box-shadow-size $input-focus-box-shadow-color;
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: $input-disabled-background-color;
+    border-color: $input-disabled-border-color;
+    box-shadow: none;
+    color: $input-disabled-color;
+    &::placeholder {
+      color: $input-disabled-placeholder-color;
+    }
+  }
+}

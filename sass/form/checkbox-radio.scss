@@ -1,0 +1,34 @@
+@use "../utilities/mixins" as *;
+@use "shared" as *;
+
+// Origin: https://github.com/jgthms/bulma/blob/0.9.4/sass/form/checkbox-radio.sass
+
+@mixin checkbox-radio {
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1.25;
+    position: relative;
+    input {
+        cursor: pointer;
+    }
+    &:hover {
+        color: $input-hover-color;
+    }
+    &[disabled],
+    fieldset[disabled] &,
+    input[disabled] {
+        color: $input-disabled-color;
+        cursor: not-allowed;
+    }
+}
+
+.checkbox {
+    @include checkbox-radio;
+}
+
+.radio {
+    @include checkbox-radio;
+    & + .radio {
+        @include ltr-property("margin", 0.5em, false);
+    }
+}

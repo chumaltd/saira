@@ -5,7 +5,7 @@
 $control-radius: $radius !default;
 $control-radius-small: $radius-small !default;
 
-$control-border-width: 1px !default;
+$control-border-width: 2px !default;
 
 $control-height: 2.5em !default;
 $control-line-height: 1.5 !default;
@@ -16,17 +16,13 @@ $control-padding-horizontal: calc(0.75em - #{$control-border-width}) !default;
 @mixin control {
     align-items: center;
     appearance: none;
-    border: $control-border-width solid transparent;
-    border-radius: $control-radius;
-    box-shadow: none;
+    border-width: $control-border-width;
+    border-style: solid;
     display: inline-flex;
-    font-size: $size-normal;
     height: $control-height;
     justify-content: flex-start;
     line-height: $control-line-height;
     padding-bottom: $control-padding-vertical;
-    padding-left: $control-padding-horizontal;
-    padding-right: $control-padding-horizontal;
     padding-top: $control-padding-vertical;
     position: relative;
     transition-duration: $duration;
