@@ -19,6 +19,7 @@ const wrapTemplate = (cssStr) => {
 const files = [
 	`${inDir}/components/menu.scss`,
 	`${inDir}/components/navbar.scss`,
+	`${inDir}/components/pagination.scss`,
 	`${inDir}/elements/box.scss`,
 	`${inDir}/elements/button.scss`,
 	`${inDir}/elements/icon.scss`,
@@ -30,6 +31,7 @@ const files = [
 	`${inDir}/helpers/overflow.scss`,
 	`${inDir}/layout/footer.scss`,
 	`${inDir}/layout/hero.scss`,
+	`${inDir}/layout/media.scss`,
 	`${inDir}/layout/section.scss`,
 ];
 await mkdirp(outDir)
