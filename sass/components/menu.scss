@@ -1,7 +1,7 @@
 @use "../utilities/variables" as *;
 @use "../utilities/mixins" as *;
 
-//Derived: https://github.com/jgthms/bulma/blob/0.9.4/sass/components/menu.sass
+//Origin: https://github.com/jgthms/bulma/blob/0.9.4/sass/components/menu.sass
 
 //   https://github.com/primer/css/blob/main/src/utilities/colors.scss
 $menu-item-color: var(--fgColor-default, hsl(0, 0%, 29%)) !default;

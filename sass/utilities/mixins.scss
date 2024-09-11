@@ -1,6 +1,6 @@
 @use "variables" as *;
 
-// https://github.com/jgthms/bulma/blob/0.9.4/sass/utilities/mixins.sass
+//Origin: https://github.com/jgthms/bulma/blob/0.9.4/sass/utilities/mixins.sass
 
 @mixin mobile {
   @media screen and (max-width: $tablet - 1px) {

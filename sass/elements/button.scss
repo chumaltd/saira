@@ -1,7 +1,7 @@
 @use "../utilities/variables" as v;
 @import "../utilities/mixins";
 
-// https://github.com/jgthms/bulma/blob/0.9.4/sass/elements/button.sass
+//Origin: https://github.com/jgthms/bulma/blob/0.9.4/sass/elements/button.sass
 
 $button-color: var(--fgColor-default, hsl(0, 0%, 21%)) !default;
 $button-background-color: transparent !default;

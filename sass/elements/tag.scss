@@ -1,7 +1,7 @@
 @use "../utilities/variables" as *;
 @use "../utilities/mixins" as *;
 
-// Derived: https://github.com/jgthms/bulma/blob/0.9.4/sass/elements/tag.sass
+//Origin: https://github.com/jgthms/bulma/blob/0.9.4/sass/elements/tag.sass
 
 $tag-background-color: var(--bgColor-emphasis) !default;
 $tag-color: var(--fgColor-onEmphasis) !default;
