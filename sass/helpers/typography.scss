@@ -1,0 +1,271 @@
+//Origin: https://github.com/primer/css/blob/v21.3.6/src/utilities/typography.scss
+
+@use "../utilities/variables" as *;
+@use "../utilities/variables-layout" as *;
+@use "../utilities/mixins" as *;
+
+.h1 {
+  font-size: var(--h1-size-mobile, $size-1) !important;
+
+  @include breakpoint(md) {
+    font-size: var(--h1-size, $size-1) !important;
+  }
+}
+
+.h2 {
+  font-size: var(--h2-size-mobile, $size-2) !important;
+
+  @include breakpoint(md) {
+    font-size: var(--h2-size, $size-2) !important;
+  }
+}
+
+.h3 {
+  font-size: var(--h3-size-mobile, $size-3) !important;
+
+  @include breakpoint(md) {
+    font-size: var(--h3-size, $size-3) !important;
+  }
+}
+
+.h4 {
+  font-size: var(--h4-size, $size-4) !important;
+}
+
+.h5 {
+  font-size: var(--h5-size, $size-5) !important;
+}
+
+.h6 {
+  font-size: var(--h6-size, $size-6) !important;
+}
+
+// Does not include color property like typography base
+// styles, color should be applied with color utilities.
+
+// Heading utilities
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-weight: $weight-bold !important;
+}
+
+// Type utilities that match type sale
+.f1 {
+  font-size: var(--h1-size-mobile, $size-1) !important;
+
+  @include breakpoint(md) {
+    font-size: var(--h1-size, $size-1) !important;
+  }
+}
+
+.f2 {
+  font-size: var(--h2-size-mobile, $size-2) !important;
+
+  @include breakpoint(md) {
+    font-size: var(--h2-size, $size-2) !important;
+  }
+}
+
+.f3 {
+  font-size: var(--h3-size-mobile, $size-3) !important;
+
+  @include breakpoint(md) {
+    font-size: var(--h3-size, $size-3) !important;
+  }
+}
+
+.f4 {
+  font-size: var(--h4-size, $size-4) !important;
+
+  @include breakpoint(md) {
+    font-size: var(--h4-size, $size-4) !important;
+  }
+}
+
+.f5 {
+  font-size: var(--h5-size, $size-5) !important;
+}
+
+.f6 {
+  font-size: var(--h6-size, $size-6) !important;
+}
+
+// Type utils with light weight that match type scale
+.f00-light {
+  font-size: var(--h00-size-mobile, $size-00) !important;
+  font-weight: $weight-light !important;
+
+  @include breakpoint(md) {
+    font-size: var(--h00-size, $size-00) !important;
+  }
+}
+
+.f0-light {
+  font-size: var(--h0-size-mobile, $size-0) !important;
+  font-weight: $weight-light !important;
+
+  @include breakpoint(md) {
+    font-size: var(--h0-size, $size-0) !important;
+  }
+}
+
+.f1-light {
+  font-size: var(--h1-size-mobile, $size-1) !important;
+  font-weight: $weight-light !important;
+
+  @include breakpoint(md) {
+    font-size: var(--h1-size, $size-1) !important;
+  }
+}
+
+.f2-light {
+  font-size: var(--h2-size-mobile, $size-2) !important;
+  font-weight: $weight-light !important;
+
+  @include breakpoint(md) {
+    font-size: var(--h2-size, $size-2) !important;
+  }
+}
+
+.f3-light {
+  font-size: var(--h3-size-mobile, $size-3) !important;
+  font-weight: $weight-light !important;
+
+  @include breakpoint(md) {
+    font-size: var(--h3-size, $size-3) !important;
+  }
+}
+
+.text-small {
+  font-size: var(--h6-size, $size-7) !important;
+}
+
+/* Large leading paragraphs */
+.lead {
+  // stylelint-disable-next-line primer/spacing
+  margin-bottom: 30px;
+  font-size: var(--h3-size, $size-3);
+  font-weight: $weight-light;
+}
+
+// Text alignments
+// Responsive text alignment
+@each $breakpoint, $variant in $responsive-variants {
+  @include breakpoint($breakpoint) {
+
+    /* Text align to the right */
+    .text#{$variant}-right {
+      text-align: right !important;
+    }
+
+    /* Text align to the left */
+    .text#{$variant}-left {
+      text-align: left !important;
+    }
+
+    /* Text align to the center */
+    .text#{$variant}-center {
+      text-align: center !important;
+    }
+  }
+}
+
+// Text styles
+/* Set the font weight to normal */
+.text-normal {
+  font-weight: $weight-normal !important;
+}
+
+/* Set the font weight to normal */
+.text-medium {
+  font-weight: $weight-medium !important;
+}
+
+/* Set the font weight to bold */
+.text-bold {
+  font-weight: $weight-bold !important;
+}
+
+.text-semibold {
+  font-weight: $weight-semibold !important;
+}
+
+.text-light {
+  font-weight: $weight-light !important;
+}
+
+/* Set the font to italic */
+.text-italic {
+  font-style: italic !important;
+}
+
+/* Make text uppercase */
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+/* Underline text */
+.text-underline {
+  text-decoration: underline !important;
+}
+
+/* Don't underline text */
+.no-underline {
+  text-decoration: none !important;
+}
+
+/* Don't wrap white space */
+.no-wrap {
+  white-space: nowrap !important;
+}
+
+/* Normal white space */
+.ws-normal {
+  white-space: normal !important;
+}
+
+/* Force long "words" to wrap if they exceed the width of the container */
+.wb-break-word {
+  word-break: break-word !important;
+  // this is for backwards compatibility with browsers that don't respect overflow-wrap
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+/*
+ * Specifically apply word-break: break-all; per MDN:
+ *
+ * > Note: In contrast to `word-break: break-word` and `overflow-wrap: break-word`,
+ * > `word-break: break-all` will create a break at the exact place where text would
+ * > otherwise overflow its container (even if putting an entire word on its own line
+ * > would negate the need for a break).
+ *
+ * see: https://developer.mozilla.org/en-US/docs/Web/CSS/word-break#Values
+ */
+.wb-break-all {
+  word-break: break-all !important;
+}
+
+// List styles
+.list-style-none {
+  list-style: none !important;
+}
+
+/* Set to monospace font */
+.text-mono {
+  font-family: $mono-font !important;
+}
+
+/* Disallow user from selecting text */
+.user-select-none {
+  user-select: none !important;
+}
+
+/* Make text capitalized (transforms first character to uppercase) */
+.text-capitalize {
+  text-transform: capitalize !important;
+}

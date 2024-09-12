@@ -1,0 +1,27 @@
+//Origin: https://github.com/primer/css/blob/v21.3.6/src/base/native-colors.scss
+
+@use "../utilities/mixins" as *;
+
+// Enables color modes for native elements
+
+@include color-mode(light) { color-scheme: light; }
+
+@include color-mode(dark) { color-scheme: dark; }
+
+[data-color-mode] {
+  color: var(--fgColor-default);
+  background-color: var(--bgColor-default);
+}
+
+// Windows High Contrast mode
+
+// Improves focus state for various components when Windows High Contrast mode is enabled
+// stylelint-disable selector-max-type
+@media (forced-colors: active) {
+  body {
+    --color-accent-emphasis: Highlight;
+    --color-fg-on-emphasis: LinkText;
+    --fgColor-onEmphasis: LinkText;
+    --fgColor-accent: Highlight;
+  }
+}

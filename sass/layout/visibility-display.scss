@@ -1,0 +1,43 @@
+//Origin: https://github.com/primer/css/blob/v21.3.6/src/utilities/visibility-display.scss
+
+@use "../utilities/variables" as v;
+@use "../utilities/variables-layout" as *;
+@use "../utilities/mixins" as *;
+
+// Responsive display utilities
+@each $breakpoint, $variant in $responsive-variants {
+    @include breakpoint($breakpoint) {
+        @each $display in $display-values {
+            .d#{$variant}-#{$display} { display: $display !important; }
+        }
+    }
+}
+
+.v-hidden { visibility: hidden !important; }
+.v-visible { visibility: visible !important; }
+
+// Hide utilities for each breakpoint
+// Each hide utility only applies to one breakpoint range.
+@media (max-width: v.$phone - 0.02px) {
+    .hide-sm {
+        display: none !important;
+    }
+}
+
+@media (min-width: v.$phone) and (max-width: v.$tablet - 0.02px) {
+    .hide-md {
+        display: none !important;
+    }
+}
+
+@media (min-width: v.$tablet) and (max-width: v.$desktop - 0.02px) {
+    .hide-lg {
+        display: none !important;
+    }
+}
+
+@media (min-width: v.$widescreen) {
+    .hide-xl {
+        display: none !important;
+    }
+}

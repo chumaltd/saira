@@ -1,0 +1,93 @@
+//Origin: https://github.com/primer/css/blob/v21.3.6/src/base/typography-base.scss
+
+@use "../utilities/variables" as *;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: $weight-bold;
+}
+
+h1 {
+  font-size: var(--h1-size, $size-1);
+}
+h2 {
+  font-size: var(--h2-size, $size-2);
+}
+h3 {
+  font-size: var(--h3-size, $size-3);
+}
+h4 {
+  font-size: var(--h4-size, $size-4);
+}
+h5 {
+  font-size: var(--h5-size, $size-5);
+}
+h6 {
+  font-size: var(--h6-size, $size-6);
+}
+
+// Body text
+// --------------------------------------------------
+
+p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+small {
+  font-size: 90%;
+}
+
+blockquote {
+  margin: 0;
+}
+
+// Lists
+// --------------------------------------------------
+
+ul,
+ol {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ol ol,
+ul ol {
+  list-style-type: lower-roman;
+}
+
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+dd {
+  margin-left: 0;
+}
+
+// Monospaced
+// --------------------------------------------------
+
+tt,
+code,
+samp {
+  font-family: $mono-font;
+  font-size: $size-small;
+}
+
+pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: $mono-font;
+  font-size: $size-small;
+}
+

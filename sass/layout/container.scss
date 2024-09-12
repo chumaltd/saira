@@ -1,0 +1,27 @@
+//Origin: https://github.com/primer/css/blob/v21.3.6/src/layout/container.scss
+
+@use "../utilities/variables" as *;
+
+.container-sm {
+  max-width: $container-sm;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container-md {
+  max-width: $container-md;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container-lg {
+  max-width: $container-lg;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container-xl {
+  max-width: $container-xl;
+  margin-right: auto;
+  margin-left: auto;
+}

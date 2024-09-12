@@ -1,4 +1,5 @@
 @use "variables" as *;
+@use "variables-layout" as *;
 
 //Origin: https://github.com/jgthms/bulma/blob/0.9.4/sass/utilities/mixins.sass
 
@@ -94,4 +95,59 @@
     position: absolute;
     right: $offset;
     top: $offset;
+}
+
+//Origin: https://github.com/primer/css/blob/v21.3.6/src/support/mixins/layout.scss
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == '' {
+    @content;
+  }
+
+  @else {
+    // Retrieves the value from the key
+    $value: map-get($breakpoints, $breakpoint);
+
+    // If the key exists in the map
+    @if $value != null {
+      // Prints a media query based on the value
+      @media (min-width: $value) {
+        @content;
+      }
+    }
+
+    // If the key doesn't exist in the map
+    @else {
+      @warn 'Unfortunately, no value could be retrieved from `#{$breakpoint}`. '
+        + 'Please make sure it is defined in `$breakpoints` map.';
+    }
+  }
+}
+
+@mixin color-mode($mode) {
+  @if $mode == light {
+    :root,
+    [data-color-mode="light"][data-light-theme*="#{$mode}"],
+    [data-color-mode="dark"][data-dark-theme*="#{$mode}"] {
+      @content;
+    }
+  }
+
+  @else {
+    [data-color-mode="light"][data-light-theme*="#{$mode}"],
+    [data-color-mode="dark"][data-dark-theme*="#{$mode}"] {
+      @content;
+    }
+  }
+
+  @media (prefers-color-scheme: light) {
+    [data-color-mode="auto"][data-light-theme*="#{$mode}"] {
+      @content;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    [data-color-mode="auto"][data-dark-theme*="#{$mode}"] {
+      @content;
+    }
+  }
 }

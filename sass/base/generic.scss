@@ -18,7 +18,3 @@
 	      --fgColor-emphasis: #111;
     }
 }
-
-[data-color-mode] a {
-	  color: var(--fgColor-saira-link, var(--fgColor-link, #{v.$link}));
-}

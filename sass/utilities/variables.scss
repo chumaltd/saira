@@ -2,6 +2,8 @@
 
 // Typography
 
+$size-00: 4.5rem !default;
+$size-0: 4rem !default;
 $size-1: 3rem !default;
 $size-2: 2.5rem !default;
 $size-3: 2rem !default;
@@ -10,11 +12,15 @@ $size-5: 1.25rem !default;
 $size-6: 1rem !default;
 $size-7: 0.75rem !default;
 
-$weight-light: 300 !default;
-$weight-normal: 400 !default;
-$weight-medium: 500 !default;
-$weight-semibold: 600 !default;
-$weight-bold: 700 !default;
+$weight-light: var(--base-text-weight-light, 300) !default;
+$weight-normal: var(--base-text-weight-normal, 400) !default;
+$weight-medium: var(--base-text-weight-medium, 500) !default;
+$weight-semibold: var(--base-text-weight-semibold, 600) !default;
+$weight-bold: var(--base-text-weight-bold, 700) !default;
+
+// Monospace font stack
+// Note: SFMono-Regular needs to come before SF Mono to fix an older version of the font in Chrome
+$mono-font: var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace) !default;
 
 // Spacing
 
@@ -42,8 +48,14 @@ $aspect-ratios: (
 // The container horizontal gap, which acts as the offset for breakpoints
 $gap: 32px !default;
 // 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
+$phone: 544px !default;
 $tablet: 769px !default;
 $desktop: 960px + (2 * $gap) !default;
+$widescreen: 1152px + (2 * $gap) !default;
+$container-sm: $phone !default;
+$container-md: min(calc($tablet - 1px), 100vw) !default;
+$container-lg: min($desktop, 100vw) !default;
+$container-xl: min($widescreen, 100vw) !default;
 
 $radius: 4px !default;
 $radius-small: 2px !default;

@@ -4,7 +4,7 @@
   "description": "",
   "main": "lit/mod.js",
   "scripts": {
-    "build:lit": "cd primer; pnpm install -P; cd ..; node litjs-build.mjs; node litjs-build-saira.mjs",
+    "build:lit": "cd primer; pnpm install -P; cd ..; node litjs-build.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

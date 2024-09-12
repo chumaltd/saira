@@ -1,0 +1,74 @@
+//Origin: https://github.com/primer/css/blob/v21.3.6/src/support/variables/layout.scss
+
+// these are values for the display CSS property
+$display-values: (
+    block,
+    flex,
+    inline,
+    inline-block,
+    inline-flex,
+    none,
+    table,
+    table-cell) !default;
+
+// Breakpoint widths
+$width-xs: 0 !default;
+// Small screen / phone
+$width-sm: 544px !default;
+// Medium screen / tablet
+$width-md: 768px !default;
+// Large screen / desktop (980 + (16 * 2)) <= container + gutters
+$width-lg: 1012px !default;
+// Extra large screen / wide desktop
+$width-xl: 1280px !default;
+
+// Breakpoints in the form (name: length)
+$breakpoints: (
+  sm: $width-sm,
+  md: $width-md,
+  lg: $width-lg,
+  xl: $width-xl) !default;
+
+// This map in the form (breakpoint: variant) is used to iterate over
+// breakpoints and create both responsive and non-responsive classes in one
+// loop:
+$responsive-variants: (
+  '': '',
+  sm: '-sm',
+  md: '-md',
+  lg: '-lg',
+  xl: '-xl',
+) !default;
+
+// rem unit support
+
+$spacer-map-rem: (
+  0: 0,
+  1: var(--base-size-4, 4px),
+  2: var(--base-size-8, 8px),
+  3: var(--base-size-16, 16px),
+  4: var(--base-size-24, 24px),
+  5: var(--base-size-32, 32px),
+  6: var(--base-size-40, 40px),
+) !default;
+
+$spacers-large-rem: (
+  7: var(--base-size-48, 48px),
+  8: var(--base-size-64, 64px),
+  9: var(--base-size-80, 80px),
+  10: var(--base-size-96, 96px),
+  11: var(--base-size-112, 112px),
+  12: var(--base-size-128, 128px),
+) !default;
+
+$spacer-map-rem-extended: map-merge(
+  (0: 0,
+  1: var(--base-size-4, 4px),
+  2: var(--base-size-8, 8px),
+  3: var(--base-size-16, 16px),
+  4: var(--base-size-24, 24px),
+  5: var(--base-size-32, 32px),
+  6: var(--base-size-40, 40px),
+),
+$spacers-large-rem,
+) !default;
