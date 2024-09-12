@@ -17,6 +17,7 @@ const wrapTemplate = (cssStr) => {
 }
 
 const files = [
+	`${inDir}/components/breadcrumb.scss`,
 	`${inDir}/components/menu.scss`,
 	`${inDir}/components/navbar.scss`,
 	`${inDir}/components/pagination.scss`,
