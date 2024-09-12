@@ -1,0 +1,74 @@
+//Origin: https://github.com/primer/css/blob/v21.3.6/src/base/normalize.scss
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+
+body {
+  margin: 0;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+
+details,
+figure,
+footer,
+header {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  vertical-align: baseline;
+}
+
+
+/* Embedded content
+   ========================================================================== */
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change font properties to `inherit` in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+select,
+textarea {
+  font: inherit; /* 1 */
+  margin: 0; /* 2 */
+}
+
+:target {
+  scroll-margin-block: 5ex;
+}

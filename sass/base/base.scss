@@ -2,8 +2,10 @@
 
 @use "../utilities/variables" as v;
 
-* {
-  box-sizing: border-box;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 input,
@@ -18,6 +20,7 @@ button {
 body {
   font-size: var(--body-font-size, 14px);
   line-height: 1.5;
+  min-height: 100vh;
   color: var(--fgColor-default);
   background-color: var(--bgColor-default);
 }
