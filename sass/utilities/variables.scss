@@ -87,7 +87,9 @@ $colors: (
     "success": var(--bgColor-success-emphasis) var(--fgColor-onInverse),
     "warning": var(--bgColor-attention-emphasis) var(--fgColor-onInverse),
     "danger": var(--bgColor-danger-emphasis) var(--fgColor-onInverse),
-    "black": #111 #fff
+    "black": #111 #fff,
+    "white": #fff #111,
+    "inverse": var(--bgColor-inverse) var(--fgColor-onInverse),
 );
 
 $sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6 $size-7 !default;
