@@ -21,6 +21,7 @@ const files = [
 	`${inDir}/components/menu.scss`,
 	`${inDir}/components/navbar.scss`,
 	`${inDir}/components/pagination.scss`,
+	`${inDir}/components/tabs.scss`,
 	`${inDir}/elements/box.scss`,
 	`${inDir}/elements/button.scss`,
 	`${inDir}/elements/icon.scss`,
