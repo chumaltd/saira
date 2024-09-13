@@ -19,6 +19,7 @@ button {
 
 body {
   font-size: var(--body-font-size, 14px);
+  font-family: v.$primary-font;
   line-height: 1.5;
   min-height: 100vh;
   color: var(--fgColor-default);
