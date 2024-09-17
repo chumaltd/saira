@@ -47,6 +47,7 @@ const files = [
 	`${inDir}/layout/padding.scss`,
 	`${inDir}/layout/section.scss`,
 	`${inDir}/layout/visibility-display.scss`,
+	`${inDir}/utilities/mwc-colors.scss`,
 ];
 await mkdirp(outDir)
 const inPattern = new RegExp(`^${inDir}/`)
