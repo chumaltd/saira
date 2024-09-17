@@ -34,11 +34,18 @@
   md-tabs {
     --md-sys-color-surface: transparent;
   }
+
+  md-outlined-text-field,
+  md-icon-button {
+    --md-sys-color-on-surface: var(--bgColor-inverse);
+  }
 }
 
-.is-inverse md-outlined-text-field,
-md-outlined-text-field.is-inverse {
-  --md-sys-color-on-surface: var(--bgColor-inverse);
+md-outlined-text-field,
+md-icon-button {
+    &.is-inverse {
+        --md-sys-color-on-surface: var(--bgColor-inverse);
+    }
 }
 
 md-list,
