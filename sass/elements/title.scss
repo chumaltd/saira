@@ -82,11 +82,19 @@ $subtitle-negative-margin: -1.25rem !default;
 h1, h2, h3, h4, h5, h6 {
     &.has-icon {
         display: inline-flex;
+        align-items: center;
         gap: .5em;
     }
 }
 
-div.has-icon {
-    display: flex;
-    gap: .5em;
+div, a {
+    &.has-icon {
+        display: flex;
+        align-items: center;
+        gap: .5em;
+    }
+
+    &.has-icon.is-top {
+        align-items: start;
+    }
 }

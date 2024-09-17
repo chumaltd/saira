@@ -50,7 +50,7 @@ md-icon-button {
 
 md-list,
 md-tabs {
-  .is-inverse {
+  &.is-inverse {
     --md-sys-color-surface: transparent;
   }
 }
