@@ -12,8 +12,8 @@ export class ColorThemeSwitch extends LitElement {
     };
 
     constructor() {
-        this.k = "theme";
         super();
+        this.k = "theme";
     }
 
     connectedCallback() {
