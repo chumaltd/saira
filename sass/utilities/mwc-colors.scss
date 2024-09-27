@@ -14,6 +14,7 @@
     --md-sys-color-surface-container-highest: var(--bgColor-inset);
 
     --md-fab-label-text-color: var(--fgColor-saira-link, var(--fgColor-link, #{v.$link}));
+    --md-menu-item-selected-container-color: var(--selectMenu-bgColor-active);
     --md-text-button-label-text-color: var(--fgColor-saira-link, var(--fgColor-link, #{v.$link}));
 }
 
