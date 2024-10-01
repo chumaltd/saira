@@ -29,6 +29,15 @@ $dimensions: 16 24 32 48 64 96 128 !default;
       }
   }
 
+  // Resize
+  .contain {
+    object-fit: contain;
+  }
+
+  .cover {
+    object-fit: cover;
+  }
+
   // Ratio
   &.is-square {
       aspect-ratio: 1;
