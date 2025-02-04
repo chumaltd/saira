@@ -1,10 +1,10 @@
 {
   "name": "saira",
-  "version": "1.5.10",
+  "version": "1.5.11",
   "description": "",
   "main": "lit/mod.js",
   "scripts": {
-    "build:lit": "cd primer; pnpm install -P; cd ..; node litjs-build.mjs",
+    "build:lit": "pnpm install -P; node litjs-build.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
