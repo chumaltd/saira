@@ -1,5 +1,6 @@
+@use "sass:list";
 @use "../utilities/variables" as v;
-@import "../utilities/mixins";
+@use "../utilities/mixins" as *;
 
 //Origin: https://github.com/jgthms/bulma/blob/0.9.4/sass/elements/button.sass
 
@@ -92,8 +93,8 @@ $button-colors: v.$colors;
   }
   // Colors
   @each $name, $pair in $button-colors {
-    $color: nth($pair, 1);
-    $color-invert: nth($pair, 2);
+    $color: list.nth($pair, 1);
+    $color-invert: list.nth($pair, 2);
     &.is-#{$name} {
       background-color: $color;
       border-color: transparent;

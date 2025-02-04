@@ -1,5 +1,6 @@
 //Origin: https://github.com/primer/css/blob/v21.3.6/src/utilities/padding.scss
 
+@use "sass:list";
 @use "../utilities/variables-layout" as *;
 @use "../utilities/mixins" as *;
 
@@ -8,7 +9,7 @@
   @include breakpoint($breakpoint) {
     // Loop through the spacer values
     @each $scale, $size in $spacer-map-rem-extended {
-      @if ($scale < length($spacer-map-rem)) {
+      @if ($scale < list.length($spacer-map-rem)) {
         /* Set a $size padding to all sides at $breakpoint */
         .p#{$variant}-#{$scale}  { padding: $size !important; }
       }
@@ -22,7 +23,7 @@
       /* Set a $size padding to the left at $breakpoint */
       .pl#{$variant}-#{$scale} { padding-left: $size !important; }
 
-      @if ($scale < length($spacer-map-rem)) {
+      @if ($scale < list.length($spacer-map-rem)) {
         /* Set a $size padding to the left & right at $breakpoint */
         .px#{$variant}-#{$scale} {
           padding-right: $size !important;

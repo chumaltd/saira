@@ -1,5 +1,7 @@
 //Origin: https://github.com/primer/css/blob/v21.3.6/src/support/variables/layout.scss
 
+@use "sass:map";
+
 // these are values for the display CSS property
 $display-values: (
     block,
@@ -61,7 +63,7 @@ $spacers-large-rem: (
   12: var(--base-size-128, 128px),
 ) !default;
 
-$spacer-map-rem-extended: map-merge(
+$spacer-map-rem-extended: map.merge(
   (0: 0,
   1: var(--base-size-4, 4px),
   2: var(--base-size-8, 8px),

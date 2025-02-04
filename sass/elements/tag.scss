@@ -1,3 +1,4 @@
+@use 'sass:list';
 @use "../utilities/variables" as *;
 @use "../utilities/mixins" as *;
 
@@ -104,15 +105,15 @@ $tag-colors: $colors !default;
     }
     // Colors
     @each $name, $pair in $tag-colors {
-        $color: nth($pair, 1);
-        $color-invert: nth($pair, 2);
+        $color: list.nth($pair, 1);
+        $color-invert: list.nth($pair, 2);
         &.is-#{$name} {
             background-color: $color;
             color: $color-invert;
             // If a light and dark colors are provided
-            @if length($pair) > 3 {
-                $color-light: nth($pair, 3);
-                $color-dark: nth($pair, 4);
+            @if list.length($pair) > 3 {
+                $color-light: list.nth($pair, 3);
+                $color-dark: list.nth($pair, 4);
                 &.is-light {
                     background-color: $color-light;
                     color: $color-dark;

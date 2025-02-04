@@ -1,5 +1,5 @@
-@import "../utilities/mixins";
-@import "../utilities/variables";
+@use "../utilities/mixins" as *;
+@use "../utilities/variables" as *;
 
 //Origin: https://github.com/jgthms/bulma/blob/0.9.4/sass/layout/hero.sass
 

@@ -1,3 +1,4 @@
+@use "sass:list";
 @use "../utilities/variables" as *;
 @use "../utilities/mixins" as *;
 @use "shared" as *;
@@ -36,7 +37,7 @@ $label-colors: $form-colors !default;
     font-size: $help-size;
     margin-top: 0.25rem;
     @each $name, $pair in $label-colors {
-        $color: nth($pair, 1);
+        $color: list.nth($pair, 1);
         &.is-#{$name} {
             color: $color;
         }
