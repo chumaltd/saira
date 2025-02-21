@@ -34,6 +34,12 @@ $menu-label-spacing: 1em !default;
   //&.is-large {
   //  font-size: $size-large;
   //}
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .menu-list {
@@ -41,7 +47,9 @@ $menu-label-spacing: 1em !default;
   a {
     border-radius: $menu-item-radius;
     color: $menu-item-color;
+    cursor: pointer;
     padding: $menu-list-link-padding;
+    text-decoration: none;
     // icon centering
     display: flex;
     align-items: center;
