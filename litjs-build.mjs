@@ -56,7 +56,7 @@ const tasks = files.map(async from => {
 
   const to = join(outDir, `${name}.js`)
 
-  const result = await sass.compileAsync(from, {style: 'compressed'})
+  const result = await sass.compileAsync(from, {style: 'compressed', charset: false})
 
   await Promise.all([
     writeFile(to, wrapTemplate(result.css), 'utf8'),

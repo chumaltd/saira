@@ -23,6 +23,7 @@ $breadcrumb-item-separator-color: var(--borderColor-neutral-emphasis) !default;
         display: flex;
         justify-content: center;
         padding: $breadcrumb-item-padding-vertical $breadcrumb-item-padding-horizontal;
+        text-decoration: none;
         &:hover {
             color: $breadcrumb-item-hover-color;
         }
@@ -55,6 +56,9 @@ $breadcrumb-item-separator-color: var(--borderColor-neutral-emphasis) !default;
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-left: 0;
     }
     .icon {
         &:first-child {
