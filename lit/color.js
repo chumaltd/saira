@@ -1,0 +1,4 @@
+import {css} from 'lit';
+export default css`
+.monotone{mix-blend-mode:multiply}@media screen{[data-color-mode=dark] .monotone{filter:invert(1);mix-blend-mode:screen}}@media screen and not (prefers-color-scheme: dark){[data-color-mode=auto] .monotone{filter:invert(1);mix-blend-mode:screen}}
+`

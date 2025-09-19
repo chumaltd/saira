@@ -36,6 +36,7 @@ const files = [
 	`${inDir}/form/select.scss`,
 	`${inDir}/form/tools.scss`,
 	`${inDir}/helpers/box-shadow.scss`,
+	`${inDir}/helpers/color.scss`,
 	`${inDir}/helpers/overflow.scss`,
 	`${inDir}/helpers/typography.scss`,
 	`${inDir}/layout/container.scss`,
