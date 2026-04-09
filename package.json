@@ -1,6 +1,6 @@
 {
   "name": "saira",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "description": "",
   "main": "lit/mod.js",
   "scripts": {
@@ -11,9 +11,9 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "fs-extra": "^11.3.0"
+    "fs-extra": "^11.3.4"
   },
   "dependencies": {
-    "sass": "^1.87.0"
+    "sass": "^1.99.0"
   }
 }
