@@ -1,11 +1,11 @@
 @use "../utilities/variables" as v;
 
 [data-color-mode=""], [data-color-mode=light] {
-	  --fgColor-emphasis: #111;
+  --fgColor-emphasis: #111;
 }
 
 [data-color-mode=dark] {
-	  --fgColor-emphasis: #fff;
+  --fgColor-emphasis: #fff;
 }
 
 @media screen and (prefers-color-scheme: dark) {
@@ -15,6 +15,6 @@
 }
 @media screen and not (prefers-color-scheme: dark) {
     [data-color-mode=auto] {
-	      --fgColor-emphasis: #111;
+	  --fgColor-emphasis: #111;
     }
 }

@@ -16,6 +16,7 @@
     --md-fab-label-text-color: var(--fgColor-saira-link, var(--fgColor-link, #{v.$link}));
     --md-menu-item-selected-container-color: var(--selectMenu-bgColor-active);
     --md-text-button-label-text-color: var(--fgColor-saira-link, var(--fgColor-link, #{v.$link}));
+    --shadow-blue: 2px 3px 5px rgb(45 55 70 / 22%), 4px 5px 10px rgb(50 65 90 / 12%), 10px 8px 20px rgb(60 75 105 / 5%);
 }
 
 .is-inverse {
