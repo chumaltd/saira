@@ -129,7 +129,7 @@ $button-colors: v.$colors;
           color: $color;
 	}
       }
-      &.is-outlined {
+      &.is-outlined, &.switch:not([aria-selected]) {
         background-color: transparent;
         border-color: $color;
         color: $color;
@@ -180,6 +180,9 @@ $button-colors: v.$colors;
     @include button-large;
   }
   // Modifiers
+  &.switch {
+    filter: saturate(var(--satRate-switch, 30%));
+  }
   &[disabled],
   fieldset[disabled] & {
     background-color: $button-disabled-background-color;
