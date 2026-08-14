@@ -8,6 +8,21 @@
   border-color: transparent;
 }
 
+//NOTE Nest .block-link when another link needed
+.block-link {
+  position: relative;
+
+  &.x:hover {
+    box-shadow: var(--shadow-blue, 0 4px 12px rgb(0 0 0 / 0.12)); 
+  }
+
+  & a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+}
+
 /* 
  * This comes from Primer Components
  * https://github.com/primer/view_components/blob/v0.2.0/app/components/primer/beta/border_box.pcss
